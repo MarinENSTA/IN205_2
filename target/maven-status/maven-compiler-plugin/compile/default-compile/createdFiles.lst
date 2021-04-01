@@ -1,6 +1,6 @@
 com/ensta/librarymanager/persistence/ConnectionManager.class
-ensta/libraryManager/Membre$Abonnement.class
-ensta/libraryManager/Membre.class
-com/ensta/model/Emprunt.class
-com/ensta/model/Livre.class
+com/ensta/librarymanager/model/Membre$Abonnement.class
 com/ensta/librarymanager/utils/FillDatabase.class
+com/ensta/librarymanager/model/Livre.class
+com/ensta/librarymanager/model/Emprunt.class
+com/ensta/librarymanager/model/Membre.class
