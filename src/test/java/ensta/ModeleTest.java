@@ -24,7 +24,7 @@ public class ModeleTest {
     public void TestEmprunt1()
     {
         assertNotEquals(42, TestEmprunt.getIdLivre());
-        System.out.println(TestEmprunt.toString());
+        //System.out.println(TestEmprunt.toString());
     }
 
     @Test
