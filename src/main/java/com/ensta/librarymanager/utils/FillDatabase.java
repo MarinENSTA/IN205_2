@@ -1,15 +1,14 @@
 package com.ensta.librarymanager.utils;
 
+import com.ensta.librarymanager.persistence.ConnectionManager;
+import org.h2.tools.DeleteDbFiles;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.h2.tools.DeleteDbFiles;
-
-import com.ensta.librarymanager.persistence.ConnectionManager;
 
 public class FillDatabase {
 
@@ -18,7 +17,7 @@ public class FillDatabase {
         try {
             DeleteDbFiles.execute("~", "libraryManagerDatabase", true);
             insertWithPreparedStatement();
-	    System.out.println("Success !");
+	    System.out.println("Success filling database!");
         } catch (SQLException e) {
             e.printStackTrace();
         }

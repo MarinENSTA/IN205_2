@@ -19,7 +19,8 @@ public class Membre {
         this.abonnement = abonnement;
     }
 
-    public enum Abonnement {BASIC, PREMIUM, VIP}
+    public Membre() {
+    }
 
     public int getId() {
         return id;

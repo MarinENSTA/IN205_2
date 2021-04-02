@@ -1,5 +1,6 @@
 package ensta;
 
+import com.ensta.librarymanager.model.Abonnement;
 import com.ensta.librarymanager.model.Emprunt;
 import com.ensta.librarymanager.model.Livre;
 import com.ensta.librarymanager.model.Membre;
@@ -7,10 +8,11 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class ModeleTest {
-    Membre TestMembre = new Membre(0, "STAMM", "Marin", "Ensta Paris", "marin.stamm@ensta-paris.fr", "+33615269117", Membre.Abonnement.VIP );
+    Membre TestMembre = new Membre(0, "STAMM", "Marin", "Ensta Paris", "marin.stamm@ensta-paris.fr", "+33615269117", Abonnement.VIP );
     Livre TestLivre = new Livre(0, "Boule de Foudre", "Liu Cixin", "12345");
     Emprunt TestEmprunt = new Emprunt(0,TestMembre, TestLivre, LocalDate.now(), LocalDate.now());
 
@@ -30,7 +32,7 @@ public class ModeleTest {
     @Test
     public void TestMembre0()
     {
-        assertEquals(Membre.Abonnement.VIP, TestMembre.getAbonnement());
+        assertEquals(Abonnement.VIP, TestMembre.getAbonnement());
     }
 
     @Test

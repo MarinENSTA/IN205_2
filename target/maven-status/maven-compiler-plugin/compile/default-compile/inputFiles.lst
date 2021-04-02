@@ -1,5 +1,12 @@
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/persistence/ConnectionManager.java
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/utils/FillDatabase.java
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/model/Livre.java
+/home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/dao/MembreDao.java
+/home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/dao/EmpruntDao.java
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/model/Membre.java
+/home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/dao/LivreDao.java
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/model/Emprunt.java
+/home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/model/Abonnement.java
+/home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/exception/DaoException.java
+/home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/dao/impl/MembreDaoImpl.java
+/home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/utils/EstablishConnection.java
