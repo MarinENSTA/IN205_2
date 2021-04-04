@@ -9,6 +9,12 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class EmpruntServiceImpl implements EmpruntService {
+    private static EmpruntServiceImpl instance = new EmpruntServiceImpl();
+    private EmpruntServiceImpl() { }
+    public static EmpruntService getInstance() {
+        return instance;
+    }
+
     @Override
     public List<Emprunt> getList() throws ServiceException {
         return null;

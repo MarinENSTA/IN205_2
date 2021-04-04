@@ -7,6 +7,13 @@ import com.ensta.librarymanager.service.MembreService;
 import java.util.List;
 
 public class MembreServiceImpl implements MembreService {
+
+    private static MembreServiceImpl instance = new MembreServiceImpl();
+    private MembreServiceImpl() { }
+    public static MembreService getInstance() {
+        return instance;
+    }
+
     @Override
     public List<Membre> getList() throws ServiceException {
         return null;

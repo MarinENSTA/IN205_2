@@ -68,6 +68,34 @@ public class DaoTest {
     }
 
     @Test
+    public void TestCountEmpruntsByMembre() throws DaoException {
+        EmpruntDao empruntDao = EmpruntDaoImpl.getInstance();
+        List<Emprunt> emprunts = new ArrayList<>();
+        try {
+            emprunts = empruntDao.getListCurrentByMembre(5);
+            //System.out.println(emprunts);
+            assertEquals(2, emprunts.size());
+
+        } catch (DaoException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test
+    public void TestCountEmpruntsByCurrent() throws DaoException {
+        EmpruntDao empruntDao = EmpruntDaoImpl.getInstance();
+        List<Emprunt> emprunts = new ArrayList<>();
+        try {
+            emprunts = empruntDao.getListCurrent();
+            //System.out.println(emprunts);
+            assertEquals(3, emprunts.size());
+
+        } catch (DaoException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test
     public void TestIdEmprunts() throws DaoException {
         EmpruntDao empruntDao = EmpruntDaoImpl.getInstance();
         int count = -1;
