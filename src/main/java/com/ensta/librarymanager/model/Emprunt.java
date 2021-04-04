@@ -17,6 +17,9 @@ public class Emprunt
 		this.dateRetour = dateRetour;
 	}
 
+	public Emprunt() {
+	}
+
 	public int getId() {
 		return id;
 	}
