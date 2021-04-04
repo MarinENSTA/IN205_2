@@ -3,19 +3,26 @@ package com.ensta.librarymanager.model;
 import java.util.NoSuchElementException;
 
 public enum Abonnement {
-        BASIC("BASIC"),
-        PREMIUM("PREMIUM"),
-        VIP("VIP");
+        BASIC("BASIC", 2),
+        PREMIUM("PREMIUM", 5),
+        VIP("VIP", 20);
 
         private String name;
+        private int simultaneous;
 
-        Abonnement(String nom)
+        Abonnement(String nom, int simultaneous)
         {
-            this.name=nom;
+                this.simultaneous=simultaneous;
+                this.name=nom;
         }
 
         public String getName() {
             return this.name;
+        }
+
+        public int getSimultaneous ()
+        {
+                return this.simultaneous;
         }
 
         public static Abonnement fromString(String name)

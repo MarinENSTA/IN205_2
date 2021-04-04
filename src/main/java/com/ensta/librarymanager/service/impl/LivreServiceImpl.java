@@ -1,12 +1,11 @@
 package com.ensta.librarymanager.service.impl;
 
-import com.ensta.librarymanager.dao.EmpruntDao;
 import com.ensta.librarymanager.dao.LivreDao;
-import com.ensta.librarymanager.dao.impl.EmpruntDaoImpl;
 import com.ensta.librarymanager.dao.impl.LivreDaoImpl;
 import com.ensta.librarymanager.exception.DaoException;
 import com.ensta.librarymanager.exception.ServiceException;
 import com.ensta.librarymanager.model.Livre;
+import com.ensta.librarymanager.service.EmpruntService;
 import com.ensta.librarymanager.service.LivreService;
 
 import java.util.ArrayList;
@@ -35,17 +34,17 @@ public class LivreServiceImpl implements LivreService {
     @Override
     public List<Livre> getListDispo() throws ServiceException {
         LivreDao livreDao = LivreDaoImpl.getInstance();
-        EmpruntDao empruntDao = EmpruntDaoImpl.getInstance();
+        EmpruntService empruntService = EmpruntServiceImpl.getInstance();
         List<Livre> livres = new ArrayList<>();
         try {
             livres = livreDao.getList();
 
             int count = 0;
             while (livres.size() > count) {
-                if (empruntDao.getListCurrentByLivre(livres.get(count).getId()).size()>0)
-                    livres.remove(count);
-                else
+                if (empruntService.isLivreDispo(livres.get(count).getId()))
                     count++;
+                else
+                    livres.remove(count);
             }
 
         } catch (DaoException e1) {
@@ -69,10 +68,16 @@ public class LivreServiceImpl implements LivreService {
     @Override
     public int create(String titre, String auteur, String isbn) throws ServiceException {
         LivreDao livreDao = LivreDaoImpl.getInstance();
+
         int i = -1;
         try {
-            i = livreDao.create(titre,auteur,isbn);
-        }  catch (DaoException e1) {
+            if (titre.length() == 0)
+            {
+                throw new ServiceException( "Tentative de création incorrecte de livre" );
+            }
+            else
+                i = livreDao.create(titre,auteur,isbn);
+        }  catch (DaoException | ServiceException e1) {
             System.out.println(e1.getMessage());
         }
         return i;
@@ -83,8 +88,11 @@ public class LivreServiceImpl implements LivreService {
         LivreDao livreDao = LivreDaoImpl.getInstance();
         int i = -1;
         try {
-            livreDao.update(livre);
-        } catch (DaoException e1) {
+            if (livre.getTitre().length() == 0)
+                throw new ServiceException("Tentative de modification incorrecte de livre");
+            else
+                livreDao.update(livre);
+        } catch (DaoException | ServiceException e1) {
             System.out.println(e1.getMessage());
         } catch (NumberFormatException e2) {
             throw new ServiceException("Erreur lors du parsing: id=" + livre.getId(), e2);
