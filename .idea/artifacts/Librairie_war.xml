@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="TP3Ensta-1.0-SNAPSHOT.war">
+    <root id="archive" name="Projet2-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="Librairie:war exploded" />
     </root>
   </artifact>

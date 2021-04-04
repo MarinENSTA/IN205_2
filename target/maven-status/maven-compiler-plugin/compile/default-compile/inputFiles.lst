@@ -4,6 +4,7 @@
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/service/EmpruntService.java
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/model/Membre.java
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/service/MembreService.java
+/home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/servlet/DashboardServlet.java
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/model/Emprunt.java
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/exception/ServiceException.java
 /home/marins/2A-ENSTA/IN205/Librairie/Projet2/src/main/java/com/ensta/librarymanager/service/impl/MembreServiceImpl.java

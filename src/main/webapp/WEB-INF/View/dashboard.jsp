@@ -23,7 +23,12 @@
         <div class="col l4 s6">
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>12</h3> <!-- TODO : afficher le nombre de membres à la place de 12 -->
+              <h3>
+                  <%
+                      Object n_membres = request.getAttribute("membres_count");
+                      out.println(n_membres);
+                  %>
+              </h3> <!-- TODO : afficher le nombre de membres ï¿½ la place de 12 -->
               <p>Membres</p>
             </div>
             <div class="icon">
@@ -35,7 +40,11 @@
         <div class="col l4 s6">
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>27</h3> <!-- TODO : afficher le nombre de livres à la place de 27 -->
+              <h3><%
+                  Object n_livres = request.getAttribute("livres_count");
+                  out.println(n_livres);
+              %>
+              </h3> <!-- TODO : afficher le nombre de livres ï¿½ la place de 27 -->
               <p>Livres</p>
             </div>
             <div class="icon">
@@ -47,7 +56,11 @@
         <div class="col l4 s6">
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>1515</h3> <!-- TODO : afficher le nombre d'emprunts à la place de 1515 -->
+              <h3><%
+                  Object n_emprunts = request.getAttribute("emprunts_count");
+                  out.println(n_emprunts);
+                  %>
+              </h3> <!-- TODO : afficher le nombre d'emprunts ï¿½ la place de 1515 -->
               <p>Emprunts</p>
             </div>
             <div class="icon">
@@ -69,17 +82,17 @@
                     </tr>
                 </thead>
                 <tbody id="results">
-                
-                    <tr>
-                        <td>Titre du livre, <em>de Nom de l'auteur</em></td>
-                        <td>Prénom et nom du membre emprunteur</td>
-                        <td>Date de l'emprunt</td>
-                        <td>
-                            <a href="emprunt_return?id=idDeLEmprunt"><ion-icon class="table-item" name="log-in"></a>
-                        </td>
-                    </tr>
-                    
-                     <!-- TODO : parcourir la liste des emprunts en cours et les afficher selon la structure d'exemple ci-dessus -->
+                    <c:forEach items="${emprunts}" var="emprunt">
+                        <tr>
+                            <td> <c:out value="${emprunt.getIdLivre().getTitre()}"></c:out>, <em><c:out value="${emprunt.getIdLivre().getAuteur()}"></c:out></em> </td>
+                            <td> <c:out value="${emprunt.getIdMembre().getNom()}"></c:out>, <em><c:out value="${emprunt.getIdMembre().getPrenom()}"></c:out></em> </td>
+                            <td> <c:out value="${emprunt.getDateEmprunt()}"></c:out> </td>
+                            <td>
+                                <a href="emprunt_return?id=id"> <ion-icon class="table-item" name="log-in"> </a>
+                            </td>
+                            <!-- TODO : parcourir la liste des emprunts en cours et les afficher selon la structure d'exemple ci-dessus -->
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
           </div>
