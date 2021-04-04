@@ -4,7 +4,7 @@ import com.ensta.librarymanager.dao.MembreDao;
 import com.ensta.librarymanager.exception.DaoException;
 import com.ensta.librarymanager.model.Abonnement;
 import com.ensta.librarymanager.model.Membre;
-import com.ensta.librarymanager.utils.EstablishConnection;
+import com.ensta.librarymanager.persistence.ConnectionManager;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -44,11 +44,12 @@ public class MembreDaoImpl implements MembreDao {
     public List<Membre> getList() throws DaoException {
         List<Membre> members = new ArrayList<>();
         ResultSet res = null;
+        ConnectionManager connectionManager = new ConnectionManager();
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
         try {
-            connection = EstablishConnection.getConnection();
+            connection = connectionManager.getConnection();
             preparedStatement = connection.prepareStatement(SELECT_ALL_QUERY);
             res = preparedStatement.executeQuery();
             while (res.next()) {
@@ -87,11 +88,12 @@ public class MembreDaoImpl implements MembreDao {
     public Membre getById(int id) throws DaoException {
         Membre m = new Membre();
         ResultSet res = null;
+        ConnectionManager connectionManager = new ConnectionManager();
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
         try {
-            connection = EstablishConnection.getConnection();
+            connection = connectionManager.getConnection();
             preparedStatement = connection.prepareStatement(SELECT_ONE_QUERY);
             preparedStatement.setInt(1, id);
             res = preparedStatement.executeQuery();
@@ -131,11 +133,13 @@ public class MembreDaoImpl implements MembreDao {
     @Override
     public int create(String nom, String prenom, String adresse, String email, String telephone, Abonnement abonnement) throws DaoException {
         ResultSet res = null;
+        ConnectionManager connectionManager = new ConnectionManager();
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        int id = -1;
+        int id=-1;
+
         try {
-            connection = EstablishConnection.getConnection();
+            connection = connectionManager.getConnection();
             preparedStatement = connection.prepareStatement(CREATE_QUERY, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, nom);
             preparedStatement.setString(2, prenom);
@@ -178,10 +182,12 @@ public class MembreDaoImpl implements MembreDao {
 
     @Override
     public void update(Membre membre) throws DaoException {
+        ConnectionManager connectionManager = new ConnectionManager();
         Connection connection = null;
         PreparedStatement preparedStatement = null;
+
         try {
-            connection = EstablishConnection.getConnection();
+            connection = connectionManager.getConnection();
             preparedStatement = connection.prepareStatement(UPDATE_QUERY);
             preparedStatement.setString(1, membre.getNom());
             preparedStatement.setString(2, membre.getPrenom());
@@ -212,10 +218,12 @@ public class MembreDaoImpl implements MembreDao {
 
     @Override
     public void delete(int id) throws DaoException {
+        ConnectionManager connectionManager = new ConnectionManager();
         Connection connection = null;
         PreparedStatement preparedStatement = null;
+
         try {
-            connection = EstablishConnection.getConnection();
+            connection = connectionManager.getConnection();
             preparedStatement = connection.prepareStatement(DELETE_QUERY);
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
@@ -241,11 +249,12 @@ public class MembreDaoImpl implements MembreDao {
     @Override
     public int count() throws DaoException {
         ResultSet res = null;
+        ConnectionManager connectionManager = new ConnectionManager();
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
         try {
-            connection = EstablishConnection.getConnection();
+            connection = connectionManager.getConnection();
             preparedStatement = connection.prepareStatement(COUNT_QUERY);
             res = preparedStatement.executeQuery();
             if (res.next()) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ensta.ModeleTest" time="0.021" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ensta.ModeleTest" time="0.01" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -17,7 +17,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
-    <property name="sun.java.command" value="/home/marins/2A-ENSTA/IN205/Librairie/Projet2/target/surefire/surefirebooter6582574227185492675.jar /home/marins/2A-ENSTA/IN205/Librairie/Projet2/target/surefire 2021-04-04T11-39-25_289-jvmRun1 surefire566454080654899786tmp surefire_06567767523940842039tmp"/>
+    <property name="sun.java.command" value="/home/marins/2A-ENSTA/IN205/Librairie/Projet2/target/surefire/surefirebooter5284655319799361706.jar /home/marins/2A-ENSTA/IN205/Librairie/Projet2/target/surefire 2021-04-04T15-01-29_779-jvmRun1 surefire1724602369394857223tmp surefire_05963192014393870912tmp"/>
     <property name="surefire.test.class.path" value="/home/marins/2A-ENSTA/IN205/Librairie/Projet2/target/test-classes:/home/marins/2A-ENSTA/IN205/Librairie/Projet2/target/classes:/home/marins/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/marins/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/marins/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/home/marins/.m2/repository/javax/servlet/jsp/javax.servlet.jsp-api/2.3.1/javax.servlet.jsp-api-2.3.1.jar:/home/marins/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar:/home/marins/.m2/repository/com/h2database/h2/1.4.197/h2-1.4.197.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/marins"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/marins/2A-ENSTA/IN205/Librairie/Projet2/target/surefire/surefirebooter6582574227185492675.jar"/>
+    <property name="surefire.real.class.path" value="/home/marins/2A-ENSTA/IN205/Librairie/Projet2/target/surefire/surefirebooter5284655319799361706.jar"/>
     <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="1.8.0_282-8u282-b08-0ubuntu1~20.04-b08"/>

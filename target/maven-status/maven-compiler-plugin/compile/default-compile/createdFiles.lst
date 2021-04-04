@@ -1,6 +1,8 @@
 com/ensta/librarymanager/persistence/ConnectionManager.class
 com/ensta/librarymanager/model/Abonnement.class
 com/ensta/librarymanager/exception/DaoException.class
+com/ensta/librarymanager/service/impl/MembreServiceImpl.class
+com/ensta/librarymanager/service/impl/EmpruntServiceImpl.class
 com/ensta/librarymanager/dao/LivreDao.class
 com/ensta/librarymanager/utils/FillDatabase.class
 com/ensta/librarymanager/model/Emprunt.class
@@ -12,6 +14,7 @@ com/ensta/librarymanager/service/MembreService.class
 com/ensta/librarymanager/exception/ServiceException.class
 com/ensta/librarymanager/service/LivreService.class
 com/ensta/librarymanager/dao/impl/LivreDaoImpl.class
+com/ensta/librarymanager/service/impl/LivreServiceImpl.class
 com/ensta/librarymanager/dao/MembreDao.class
 com/ensta/librarymanager/dao/impl/MembreDaoImpl.class
 com/ensta/librarymanager/model/Membre.class

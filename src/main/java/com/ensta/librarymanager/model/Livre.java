@@ -16,7 +16,14 @@ public class Livre
 
 	public Livre() {}
 
-	public int getId() {
+	public Livre(String titre, String auteur, String isbn) {
+		this();
+		this.titre=titre;
+		this.auteur=auteur;
+		this.isbn=isbn;
+	}
+
+    public int getId() {
 		return id;
 	}
 

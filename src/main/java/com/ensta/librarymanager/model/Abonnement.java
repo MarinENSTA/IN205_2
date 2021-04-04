@@ -3,9 +3,9 @@ package com.ensta.librarymanager.model;
 import java.util.NoSuchElementException;
 
 public enum Abonnement {
-        BASIC("basic"),
-        PREMIUM("premium"),
-        VIP("vip");
+        BASIC("BASIC"),
+        PREMIUM("PREMIUM"),
+        VIP("VIP");
 
         private String name;
 
@@ -22,7 +22,7 @@ public enum Abonnement {
         {
                 for (Abonnement abonnement : Abonnement.values())
                 {
-                        if (abonnement.name == name)
+                        if (abonnement.name.equals(name))
                                 return abonnement;
                 }
                 throw new NoSuchElementException("no enum for name " + name);
